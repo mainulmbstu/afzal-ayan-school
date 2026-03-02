@@ -25,8 +25,8 @@ const Users = async () => {
       <div className="">
         <table className="table">
           {/* head */}
-          <thead>
-            <tr className=" bg-zinc-300">
+          <thead className="dark:text-black">
+            <tr>
               <th scope="col">SL</th>
               <th scope="col">Unique ID</th>
               <th scope="col">Image</th>
