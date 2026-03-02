@@ -24,7 +24,7 @@ const MessagePage = async ({ searchParams }) => {
             return (
               <div
                 key={item._id}
-                className={` border p-2 px-3 ${i % 2 ? " bg-base-200" : ""}`}
+                className={` border p-2 px-3 ${i % 2 ? " bg-base-300" : ""}`}
               >
                 <p>
                   <b className=" bg-blue-300">You:</b> (
