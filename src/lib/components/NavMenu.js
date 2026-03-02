@@ -48,7 +48,7 @@ const NavMenu = () => {
   return (
     <div className=" bg-blue-400">
       <div className=" max-w-400 m-auto h-12 md:h-35  shadow-lg flex  justify-between md:items-center p-2  bg-blue-400 dark:text-white">
-        <div className="md:h-30">
+        <div className="md:h-25">
           <Link href="/">
             <Image
               className=" rounded-full h-full w-full"
@@ -76,7 +76,9 @@ const NavMenu = () => {
               >
                 <li className=" border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all">
                   <Link
-                    className={path === "/" ? "underline text-blue-700" : ""}
+                    className={
+                      path === "/" ? "bg-zinc-300 underline text-blue-700" : ""
+                    }
                     onClick={menuClose}
                     href={"/"}
                   >
@@ -144,7 +146,9 @@ const NavMenu = () => {
                 <li className=" border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all">
                   <Link
                     className={
-                      path === "/gallery" ? "underline text-blue-700" : ""
+                      path === "/gallery"
+                        ? "bg-zinc-300 underline text-blue-700"
+                        : ""
                     }
                     onClick={menuClose}
                     href={"/gallery"}
@@ -155,7 +159,9 @@ const NavMenu = () => {
                 <li className=" border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all">
                   <Link
                     className={
-                      path === "/contacts" ? "underline text-blue-700" : ""
+                      path === "/contacts"
+                        ? " bg-zinc-300 underline text-blue-700"
+                        : ""
                     }
                     onClick={menuClose}
                     href={"/contacts"}
@@ -166,7 +172,9 @@ const NavMenu = () => {
                 <li className=" border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all">
                   <Link
                     className={
-                      path === "/notice-board" ? "underline text-blue-700" : ""
+                      path === "/notice-board"
+                        ? "bg-zinc-300 underline text-blue-700"
+                        : ""
                     }
                     onClick={menuClose}
                     href={"/notice-board"}
@@ -245,7 +253,9 @@ const NavMenu = () => {
                   <li className=" border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all">
                     <Link
                       className={
-                        path === "/user/login" ? "underline text-blue-700" : ""
+                        path === "/user/login"
+                          ? "bg-zinc-300 underline text-blue-700"
+                          : ""
                       }
                       onClick={menuClose}
                       href={"/user/login"}
