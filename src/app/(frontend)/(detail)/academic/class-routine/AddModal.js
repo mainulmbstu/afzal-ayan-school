@@ -85,7 +85,7 @@ const AddModal = () => {
             <div className="p-3">
               <Form
                 action={clientAction}
-                className=" md:p-4  bg-slate-300 shadow-lg shadow-blue-300 card dark:text-white"
+                className=" md:p-4  bg-base-300 shadow-lg shadow-blue-300 card dark:text-white"
               >
                 <div>
                   <label className="block" htmlFor="title">
