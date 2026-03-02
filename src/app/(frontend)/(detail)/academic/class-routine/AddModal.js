@@ -66,7 +66,7 @@ const AddModal = () => {
         <div className="modal-box  max-h-fit mt-10 w-screen md:w-full">
           <h3 className="text-lg font-bold">Add Item</h3>
           <div className=" grid md:grid-cols-1">
-            <div className="p-3 mx-auto">
+            <div className="p-3 mx-auto hidden md:block">
               <Image
                 priority={true}
                 src={
@@ -85,7 +85,7 @@ const AddModal = () => {
             <div className="p-3">
               <Form
                 action={clientAction}
-                className=" md:p-4  bg-slate-300 shadow-lg shadow-blue-300 card"
+                className=" md:p-4  bg-slate-300 shadow-lg shadow-blue-300 card dark:text-white"
               >
                 <div>
                   <label className="block" htmlFor="title">
