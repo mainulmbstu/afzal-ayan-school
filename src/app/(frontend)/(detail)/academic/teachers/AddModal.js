@@ -72,7 +72,7 @@ const AddTeacherModal = () => {
                     Unique ID
                   </label>
                   <input
-                    className="input"
+                    className="md:input bg-base-100"
                     type="text"
                     id="uniqueid"
                     name="uniqueid"
@@ -85,7 +85,7 @@ const AddTeacherModal = () => {
                     Name
                   </label>
                   <input
-                    className="input"
+                    className="md:input bg-base-100"
                     type="text"
                     id="name"
                     name="name"
@@ -98,7 +98,7 @@ const AddTeacherModal = () => {
                     Phone number
                   </label>
                   <input
-                    className="input"
+                    className="md:input bg-base-100"
                     type="text"
                     id="phone"
                     name="phone"
@@ -111,7 +111,7 @@ const AddTeacherModal = () => {
                     Email
                   </label>
                   <input
-                    className="input"
+                    className="md:input bg-base-100"
                     type="email"
                     id="email"
                     name="email"
@@ -124,7 +124,7 @@ const AddTeacherModal = () => {
                     Designation
                   </label>
                   <input
-                    className="input"
+                    className="md:input bg-base-100"
                     type="text"
                     id="designation"
                     name="designation"
@@ -137,7 +137,7 @@ const AddTeacherModal = () => {
                     Department
                   </label>
                   <input
-                    className="input"
+                    className="md:input bg-base-100"
                     type="text"
                     id="department"
                     name="department"
@@ -151,7 +151,7 @@ const AddTeacherModal = () => {
                     Joining date
                   </label>
                   <input
-                    className="input"
+                    className="md:input bg-base-100"
                     type="date"
                     id="joiningdate"
                     name="joiningdate"
@@ -168,7 +168,7 @@ const AddTeacherModal = () => {
                     onChange={(e) => {
                       setPicture(e.target.files[0]);
                     }}
-                    className="input"
+                    className="md:input bg-base-100"
                     type="file"
                     id="file"
                     name="file"
