@@ -47,8 +47,8 @@ const NavMenu = () => {
 
   return (
     <div className=" bg-blue-400">
-      <div className=" max-w-400 m-auto h-12 md:h-30  shadow-lg flex  justify-between md:items-center p-2  bg-blue-400 dark:text-white">
-        <div className="">
+      <div className=" max-w-400 m-auto h-12 md:h-35  shadow-lg flex  justify-between md:items-center p-2  bg-blue-400 dark:text-white">
+        <div className="md:h-30">
           <Link href="/">
             <Image
               className=" rounded-full h-full w-full"
