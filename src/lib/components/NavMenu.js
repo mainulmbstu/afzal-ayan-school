@@ -47,7 +47,7 @@ const NavMenu = () => {
 
   return (
     <div className=" bg-blue-400">
-      <div className=" max-w-400 m-auto h-12 md:h-35  shadow-lg flex  justify-between md:items-center p-2  bg-blue-400 dark:text-white">
+      <div className=" max-w-400 m-auto h-12 md:h-30  shadow-lg flex  justify-between md:items-center p-2  bg-blue-400 dark:text-white">
         <div className="">
           <Link href="/">
             <Image
@@ -262,13 +262,13 @@ const NavMenu = () => {
               isMenuOpen ? " flex-1 bg-base-300" : ""
             }`}
           >
-            <nav className="relative   uppercase z-10  ">
+            <nav className="relative    uppercase z-10  ">
               <ul
                 className={`${
                   isMenuOpen
                     ? "flex flex-col scale-y-100 pt-12 text-center  bg-blue-400 transition-all  duration-500"
                     : "scale-y-0"
-                } md:flex justify-between md:gap-6 md:scale-y-100`}
+                } md:flex justify-between md:bg-blue-300 p-3 md:gap-6 md:scale-y-100`}
               >
                 <li
                   onClick={() => setdrop4(!drop4)}
