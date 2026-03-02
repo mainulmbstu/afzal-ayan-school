@@ -52,8 +52,8 @@ const NavMenu = () => {
           <Link href="/">
             <Image
               className=" rounded-full h-full w-full"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
               priority={true}
               src={"/afzal3.jpg"}
               alt={"image"}
@@ -268,7 +268,7 @@ const NavMenu = () => {
                   isMenuOpen
                     ? "flex flex-col scale-y-100 pt-12 text-center  bg-blue-400 transition-all  duration-500"
                     : "scale-y-0"
-                } md:flex justify-between md:bg-blue-300 p-3 md:gap-6 md:scale-y-100`}
+                } md:flex justify-between md:bg-blue-300 md:p-2 md:gap-6 md:scale-y-100`}
               >
                 <li
                   onClick={() => setdrop4(!drop4)}
