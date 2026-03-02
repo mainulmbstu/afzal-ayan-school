@@ -68,11 +68,11 @@ const AddTeacherModal = () => {
                 className="    bg-base-300 shadow-lg shadow-blue-300 card dark:text-white"
               >
                 <div className="mt-3">
-                  <label className="block" htmlFor="uniqueid">
+                  <label className="hidden md:block" htmlFor="uniqueid">
                     Unique ID
                   </label>
                   <input
-                    className="md:input bg-base-100"
+                    className="input"
                     type="text"
                     id="uniqueid"
                     name="uniqueid"
@@ -81,11 +81,11 @@ const AddTeacherModal = () => {
                   />
                 </div>
                 <div className="mt-3">
-                  <label className="block" htmlFor="name">
+                  <label className="hidden md:block" htmlFor="name">
                     Name
                   </label>
                   <input
-                    className="md:input bg-base-100"
+                    className="input"
                     type="text"
                     id="name"
                     name="name"
@@ -94,11 +94,11 @@ const AddTeacherModal = () => {
                   />
                 </div>
                 <div className="mt-3">
-                  <label className="block" htmlFor="phone">
+                  <label className="hidden md:block" htmlFor="phone">
                     Phone number
                   </label>
                   <input
-                    className="md:input bg-base-100"
+                    className="input"
                     type="text"
                     id="phone"
                     name="phone"
@@ -107,11 +107,11 @@ const AddTeacherModal = () => {
                   />
                 </div>
                 <div className="mt-3">
-                  <label className="block" htmlFor="email">
+                  <label className="hidden md:block" htmlFor="email">
                     Email
                   </label>
                   <input
-                    className="md:input bg-base-100"
+                    className="input"
                     type="email"
                     id="email"
                     name="email"
@@ -120,11 +120,11 @@ const AddTeacherModal = () => {
                   />
                 </div>
                 <div className="mt-3">
-                  <label className="block" htmlFor="designation">
+                  <label className="hidden md:block" htmlFor="designation">
                     Designation
                   </label>
                   <input
-                    className="md:input bg-base-100"
+                    className="input"
                     type="text"
                     id="designation"
                     name="designation"
@@ -133,11 +133,11 @@ const AddTeacherModal = () => {
                   />
                 </div>
                 <div className="mt-3">
-                  <label className="block" htmlFor="department">
+                  <label className="hidden md:block" htmlFor="department">
                     Department
                   </label>
                   <input
-                    className="md:input bg-base-100"
+                    className="input"
                     type="text"
                     id="department"
                     name="department"
@@ -147,11 +147,11 @@ const AddTeacherModal = () => {
                 </div>
 
                 <div className="mt-3">
-                  <label className="block" htmlFor="joiningdate">
+                  <label className="hidden md:block" htmlFor="joiningdate">
                     Joining date
                   </label>
                   <input
-                    className="md:input bg-base-100"
+                    className="input"
                     type="date"
                     id="joiningdate"
                     name="joiningdate"
@@ -161,14 +161,14 @@ const AddTeacherModal = () => {
                 </div>
 
                 <div className="mt-3">
-                  <label className="block" htmlFor="name">
+                  <label className="hidden md:block" htmlFor="name">
                     Select a photo (optional)
                   </label>
                   <input
                     onChange={(e) => {
                       setPicture(e.target.files[0]);
                     }}
-                    className="md:input bg-base-100"
+                    className="input"
                     type="file"
                     id="file"
                     name="file"
@@ -180,11 +180,11 @@ const AddTeacherModal = () => {
               </Form>
             </div>
           </div>
-          <div className="modal-action">
+          {/* <div className="modal-action">
             <label htmlFor="CreateProductModal" className="btn btn-error">
               Close
             </label>
-          </div>
+          </div> */}
           <div className="modal-action">
             <label
               htmlFor="CreateProductModal"
