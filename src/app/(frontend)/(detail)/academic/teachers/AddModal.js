@@ -51,7 +51,7 @@ const AddTeacherModal = () => {
       >
         <div className="modal-box  max-h-fit mt-10 w-screen">
           <h3 className="text-lg font-bold">Add Item</h3>
-          <div className=" grid md:grid-cols-1">
+          <div className=" grid md:grid-cols-1 relative">
             <div className="p-3 mx-auto hidden md:block">
               <Image
                 priority={true}
@@ -62,7 +62,7 @@ const AddTeacherModal = () => {
                 width={200}
               />
             </div>
-            <div className="p-3">
+            <div className="">
               <Form
                 action={clientAction}
                 className="    bg-base-300 shadow-lg shadow-blue-300 card dark:text-white"
@@ -179,12 +179,12 @@ const AddTeacherModal = () => {
                 </div>
               </Form>
             </div>
+            <div className="modal-action absolute right-2.5 bottom-2.5">
+              <label htmlFor="CreateProductModal" className="btn btn-error">
+                Close
+              </label>
+            </div>
           </div>
-          {/* <div className="modal-action">
-            <label htmlFor="CreateProductModal" className="btn btn-error">
-              Close
-            </label>
-          </div> */}
           <div className="modal-action">
             <label
               htmlFor="CreateProductModal"
