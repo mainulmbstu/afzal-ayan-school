@@ -64,7 +64,7 @@ export async function POST(req) {
       <p>Link validity: 1 hour</p>
       Thanks for staying with us`,
 		};
-		mailer(credential);
+		await mailer(credential);
 		// console.log(verifyToken);
 
 		return Response.json({
