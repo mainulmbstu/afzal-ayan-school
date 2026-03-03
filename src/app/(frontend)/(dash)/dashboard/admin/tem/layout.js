@@ -1,5 +1,3 @@
-import AdminMenu from "./AdminMenu";
-
 export const metadata = {
 	title: {
 		default: "Admin dashboard",
@@ -10,9 +8,9 @@ export const metadata = {
 };
 export default function AdminLayout({ children }) {
 	return (
-		<div className=" grid md:grid-cols-12 gap-2">
+		<div className=" grid md:grid-cols-12 gap-2 border w-full">
 			<div className="col-span-12 md:col-span-3 card">
-				<AdminMenu />
+				{/* <AdminMenu /> */}
 			</div>
 			<div className="col-span-12 md:col-span-9">{children}</div>
 		</div>

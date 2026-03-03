@@ -28,11 +28,11 @@ const MainPage = async ({ params }) => {
 	let isPdf = await checkPdf(single?.file?.secure_url);
 	return (
 		<div>
-			<h2 className=" uppercase">{single?.className}</h2>
+			<h2 className=" uppercase">result of {single?.className}</h2>
 			<hr />
 			<div className=" card p-2 mt-5">
 				<CommonAddModal
-					buttonName={`Add result of class ${className}`}
+					buttonName={`Add ${className}'s result`}
 					inputs={["title", "type", "file"]}
 					type={className}
 					createAction={createAction}

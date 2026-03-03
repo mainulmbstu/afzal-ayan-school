@@ -71,7 +71,7 @@ export const createAction = async (formData) => {
 		// revalidatePath("/admin/governing-body", { expire: 0 });
 		return {
 			success: true,
-			message: `Added ${className} routine successfully`,
+			message: `Added class ${className} result successfully`,
 		};
 	} catch (error) {
 		console.log(error);

@@ -1,10 +1,15 @@
-import React from "react";
+import Profile from "@/lib/components/Profile";
+
 export const metadata = {
 	title: "Admin Dashboard",
 	description: "Admin Dashboard page",
 };
 const AdminDashboard = () => {
-	return <div>Admin page</div>;
+	return (
+		<div className=" h-[93vh]">
+			<Profile />
+		</div>
+	);
 };
 
 export default AdminDashboard;

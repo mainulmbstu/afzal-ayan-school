@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaListOl } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
-import { MdAllInclusive, MdOutlineAddBusiness } from "react-icons/md";
+import { MdAllInclusive } from "react-icons/md";
 import { PiUserListFill } from "react-icons/pi";
 
 const AdminMenu = () => {
@@ -20,21 +19,7 @@ const AdminMenu = () => {
 			href: "/dashboard/admin/user-list",
 			icon: <PiUserListFill />,
 		},
-		{
-			name: "Product",
-			href: "/dashboard/admin/create-product",
-			icon: <FaListOl />,
-		},
-		{
-			name: "Category",
-			href: "/dashboard/admin/create-category",
-			icon: <MdOutlineAddBusiness />,
-		},
-		{
-			name: "Order List",
-			href: "/dashboard/admin/order-list",
-			icon: <MdAllInclusive />,
-		},
+
 		{
 			name: "Contacts",
 			href: "/dashboard/admin/contacts",
@@ -43,7 +28,7 @@ const AdminMenu = () => {
 	];
 
 	return (
-		<div className="card p-2">
+		<div className="card p-2 w-full text-2xl">
 			<Link
 				className={
 					path === "/dashboard/admin"
@@ -56,7 +41,12 @@ const AdminMenu = () => {
 			</Link>
 			<ul className="menu rounded-box w-full">
 				{menus.map((item, i) => (
-					<li key={i} className={item.href === path ? "bg-blue-300" : ""}>
+					<li
+						key={i}
+						className={
+							item.href === path ? "bg-blue-300 text-2xl" : " text-2xl"
+						}
+					>
 						<Link href={item.href}>
 							{item.icon}
 							{item.name}
