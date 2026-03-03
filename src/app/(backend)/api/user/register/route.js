@@ -53,6 +53,7 @@ export async function POST(req) {
 			verifyTokenExpire: Date.now() + 3600000,
 			picture: url && url,
 		});
+		revalidateTag('user-list', 'max')
 		const verifyToken = jwt.sign({ id: newUser._id }, process.env.JWT_KEY);
 		const credential = {
 			email,
