@@ -1,5 +1,3 @@
-import AddImageModal from "./AddModal";
-
 import { deleteAction, getAllAction } from "./action";
 
 import getBase64 from "@/lib/helpers/plaiceholder";
@@ -7,8 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Pagination from "@/lib/components/pagination";
 import DeleteModal from "@/lib/components/DeleteModal";
-import { getTokenData } from "@/lib/helpers/getTokenData";
-import { getCookieValue } from "@/lib/helpers/getCookieValue";
+import CommonAddModal from "@/lib/components/CommonAddModal";
 
 export const metadata = {
 	title: "Prize distribution",
@@ -19,7 +16,6 @@ const Prize = async ({ searchParams }) => {
 	let spms = await searchParams;
 	let page = Number((await spms.page) ?? 1);
 	let perPage = Number((await spms.perPage) ?? 12);
-	const userInfo = await getTokenData(await getCookieValue("token"));
 	let blurData = await getBase64("");
 
 	const data = await getAllAction(page, perPage);
@@ -28,8 +24,14 @@ const Prize = async ({ searchParams }) => {
 	return (
 		<div>
 			<div>
-				<AddImageModal />
+				<CommonAddModal
+					buttonName={"Add Image"}
+					inputs={["caption", "file"]}
+					api={"/api/admin/create-prize-distribution"}
+				/>
 			</div>
+			<h2 className=" uppercase">Price Distribution</h2>
+			<hr />
 
 			<div className=" gap-4 ">
 				{entries?.length ? (

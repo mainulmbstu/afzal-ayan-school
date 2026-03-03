@@ -55,6 +55,13 @@ export const createAction = async (formData) => {
 			}
 		}
 		await dbConnect();
+		let existItem = offStaffModel.findOne({ uniqueid });
+		if (existItem) {
+			return {
+				success: false,
+				message: `Unique ID is must be unique`,
+			};
+		}
 		await offStaffModel.create({
 			uniqueid,
 			name,

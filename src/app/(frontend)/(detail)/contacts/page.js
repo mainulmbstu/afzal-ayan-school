@@ -10,6 +10,8 @@ export const metadata = {
 const Contacts = async ({ searchParams }) => {
 	return (
 		<div className="">
+			<h2 className=" uppercase">Contact us</h2>
+			<hr />
 			<Suspense fallback="sending">
 				<ContactPage />
 			</Suspense>

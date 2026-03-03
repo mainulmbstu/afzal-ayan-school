@@ -39,7 +39,12 @@ export const createAction = async (formData) => {
 	const className = formData.get("className");
 
 	const file = formData.get("file");
-
+	if (!file?.size) {
+		return {
+			success: false,
+			message: `Select a file`,
+		};
+	}
 	try {
 		let url = "";
 		if (file?.size) {
@@ -65,7 +70,7 @@ export const createAction = async (formData) => {
 		});
 		return {
 			success: true,
-			message: `Added ${title} in  notice board successfully`,
+			message: `Added ${title} for class ${className} successfully`,
 		};
 	} catch (error) {
 		console.log(error);

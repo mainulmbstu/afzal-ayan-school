@@ -8,7 +8,7 @@ export const metadata = {
 const Vision = async () => {
 	return (
 		<div>
-			<h2 className="">Vision</h2>
+			<h2 className="uppercase">Vision</h2>
 			<hr />
 			<div>
 				<Image

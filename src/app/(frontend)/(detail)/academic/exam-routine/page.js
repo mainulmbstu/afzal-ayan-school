@@ -5,7 +5,8 @@ import { getCookieValue } from "@/lib/helpers/getCookieValue";
 import { getTokenData } from "@/lib/helpers/getTokenData";
 import { deleteAction, getAllAction } from "./action";
 import Pagination from "@/lib/components/pagination";
-import AddNoticeModal from "./AddModal";
+import CommonAddModal from "@/lib/components/CommonAddModal";
+import { createAction } from "./action";
 
 export const metadata = {
 	title: "Exam routine",
@@ -21,8 +22,14 @@ const Notice = async ({ searchParams }) => {
 
 	return (
 		<div>
+			<CommonAddModal
+				buttonName={"Add exam notice"}
+				inputs={["title", "className", "file"]}
+				createAction={createAction}
+			/>
+			<h2 className=" uppercase">Exam Notice</h2>
+			<hr />
 			<div className=" card p-2 mt-5">
-				<AddNoticeModal />
 				<h3>Total: ( {data?.total})</h3>
 				{/* <h4>Total Sale: {<PriceFormat price={totalPrice} />}</h4> */}
 			</div>

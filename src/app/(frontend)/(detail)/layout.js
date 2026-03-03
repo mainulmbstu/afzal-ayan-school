@@ -2,8 +2,8 @@ import Sidebar from "@/lib/components/Sidebar";
 
 export const metadata = {
 	title: {
-		default: "Admin",
-		template: "%s | AFZAL SCHOOL",
+		default: "Academic",
+		template: "%s | AFZAL-AYAN MODEL HIGH SHOOL",
 		// absolute:""
 	},
 	description: "A school website",

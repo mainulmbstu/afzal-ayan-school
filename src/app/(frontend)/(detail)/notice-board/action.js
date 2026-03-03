@@ -38,7 +38,12 @@ export const createAction = async (formData) => {
 	const title = formData.get("title");
 
 	const file = formData.get("file");
-
+	if (!file?.size) {
+		return {
+			success: false,
+			message: `Select a file`,
+		};
+	}
 	try {
 		let url = "";
 		if (file?.size) {
@@ -59,7 +64,6 @@ export const createAction = async (formData) => {
 		await dbConnect();
 		await NoticeModel.create({
 			title,
-
 			file: url && url,
 		});
 		return {

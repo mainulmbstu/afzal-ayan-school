@@ -8,7 +8,7 @@ export const metadata = {
 const History = async () => {
 	return (
 		<div>
-			<h2>Laboratories</h2>
+			<h2 className=" uppercase">Laboratories</h2>
 			<hr />
 			<p className=" text-justify py-2">
 				We accentuate the practical education of the students. Practical classes

@@ -8,7 +8,7 @@ export const metadata = {
 const History = async () => {
 	return (
 		<div>
-			<h2>Library</h2>
+			<h2 className=" uppercase">Library</h2>
 			<hr />
 			<p className=" text-justify py-2">
 				The school has a rich library. Students use the library in the tiffin

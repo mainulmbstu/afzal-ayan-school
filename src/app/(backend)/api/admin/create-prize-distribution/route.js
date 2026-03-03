@@ -9,6 +9,12 @@ export async function POST(req) {
 
 	const caption = formData.get("caption");
 	const getFiles = formData.getAll("file");
+	if (!getFiles[0]?.size) {
+		return Response.json({
+			success: false,
+			message: `Select a file`,
+		});
+	}
 	const files = getFiles.sort((a, b) => {
 		return a.size - b.size;
 	});
@@ -18,7 +24,7 @@ export async function POST(req) {
 				let fileNo = files.indexOf(file);
 				if (file?.size > 3 * 1024 * 1000) {
 					return Response.json({
-						success: true,
+						success: false,
 						message: `${fileNo} of ${files?.length} ${fileNo > 1 ? "items" : "item"} added successfully. File too large, maximum 3 mb`,
 					});
 				}

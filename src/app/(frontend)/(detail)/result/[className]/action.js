@@ -31,9 +31,15 @@ export const getAction = async (className) => {
 };
 //===========================================================
 export const createAction = async (formData) => {
-	const className = formData.get("className");
+	const className = formData.get("type");
 	const title = formData.get("title");
 	const file = formData.get("file");
+	if (!file?.size) {
+		return {
+			success: false,
+			message: `Select a file`,
+		};
+	}
 	try {
 		let url = "";
 		if (file?.size) {

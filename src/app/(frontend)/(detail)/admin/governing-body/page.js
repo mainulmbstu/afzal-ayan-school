@@ -3,8 +3,8 @@ import Link from "next/link";
 import DeleteModal from "@/lib/components/DeleteModal";
 import { getCookieValue } from "@/lib/helpers/getCookieValue";
 import { getTokenData } from "@/lib/helpers/getTokenData";
-import AddMemberModal from "./AddMemberModal";
-import { deleteAction, getAllAction } from "./action";
+import { createAction, deleteAction, getAllAction } from "./action";
+import CommonAddModal from "@/lib/components/CommonAddModal";
 
 export const metadata = {
 	title: "Governing body",
@@ -19,7 +19,11 @@ const Users = async () => {
 			<h2 className=" uppercase">governing body</h2>
 			<hr />
 			<div className=" card p-2 mt-5">
-				<AddMemberModal />
+				<CommonAddModal
+					buttonName={"Add a Member"}
+					inputs={["designation", "name", "address", "file"]}
+					createAction={createAction}
+				/>
 				<h3>Member of governing body: ( {entries?.length})</h3>
 				{/* <h4>Total Sale: {<PriceFormat price={totalPrice} />}</h4> */}
 			</div>

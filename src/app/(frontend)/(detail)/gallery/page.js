@@ -1,10 +1,10 @@
 import Carousel2 from "@/lib/components/carousel2";
-import AddImageModal from "./AddModal";
 
 import { getAllAction } from "./action";
 
 import ListPage from "./ListPage";
 import getBase64 from "@/lib/helpers/plaiceholder";
+import CommonAddModal from "@/lib/components/CommonAddModal";
 
 export const metadata = {
 	title: "Gallery",
@@ -31,8 +31,14 @@ const Gallery = async ({ searchParams }) => {
 	return (
 		<div>
 			<div>
-				<AddImageModal />
+				<CommonAddModal
+					buttonName={"Add Image"}
+					inputs={["fileMulti"]}
+					api={"/api/admin/create-gallery"}
+				/>
 			</div>
+			<h2 className=" uppercase">gallery</h2>
+			<hr />
 			<div>
 				<Carousel2 slides={slides} autoPlay={true} interval={2000} />
 			</div>

@@ -32,6 +32,12 @@ export const createAction = async (formData) => {
 	const className = formData.get("className");
 
 	const file = formData.get("file");
+	if (!file?.size) {
+		return {
+			success: false,
+			message: `Select a file`,
+		};
+	}
 	try {
 		let url = "";
 		if (file?.size) {
@@ -77,7 +83,7 @@ export const deleteAction = async (id = "") => {
 			(await deleteImageOnCloudinary(itemExist?.picture?.public_id));
 
 		return {
-			message: `Class ${itemExist?.class} routine has been deleted successfully`,
+			message: `Class ${itemExist?.className} routine has been deleted successfully`,
 			success: true,
 		};
 	} catch (error) {

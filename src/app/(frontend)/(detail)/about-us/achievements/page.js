@@ -1,3 +1,4 @@
+import CommonAddModal from "@/lib/components/CommonAddModal";
 import Image from "next/image";
 
 export const metadata = {
@@ -8,7 +9,7 @@ export const metadata = {
 const Achievements = async () => {
 	return (
 		<div>
-			<h2 className="">Achievements</h2>
+			<h2 className="uppercase">Achievements</h2>
 			<hr />
 			<div>
 				<Image

@@ -4,7 +4,8 @@ import DeleteModal from "@/lib/components/DeleteModal";
 import { getCookieValue } from "@/lib/helpers/getCookieValue";
 import { getTokenData } from "@/lib/helpers/getTokenData";
 import { deleteAction, getAllAction } from "./action";
-import AddModal from "./AddModal";
+import CommonAddModal from "@/lib/components/CommonAddModal";
+import { createAction } from "./action";
 
 export const metadata = {
 	title: "Class routine",
@@ -17,8 +18,14 @@ const Users = async () => {
 
 	return (
 		<div>
+			<CommonAddModal
+				buttonName={"Add Class Routine"}
+				inputs={["className", "file"]}
+				createAction={createAction}
+			/>
+			<h2 className="uppercase">Class Routine</h2>
+			<hr />
 			<div className=" card p-2 mt-5">
-				<AddModal />
 				<h3>Total: ({entries?.length})</h3>
 				{/* <h4>Total Sale: {<PriceFormat price={totalPrice} />}</h4> */}
 			</div>
@@ -63,7 +70,7 @@ const Users = async () => {
 										<DeleteModal
 											value={{
 												id: item?._id,
-												message: `Do you want to delete ${item?.title}`,
+												message: `Do you want to delete ${item?.className} routine`,
 												action: deleteAction,
 											}}
 										/>

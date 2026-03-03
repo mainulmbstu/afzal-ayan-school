@@ -9,6 +9,12 @@ export async function POST(req) {
 	let formData = await req.formData();
 
 	const getFiles = formData.getAll("file");
+	if (!getFiles[0]?.size) {
+		return Response.json({
+			success: false,
+			message: `Select a file`,
+		});
+	}
 	const files = getFiles.sort((a, b) => {
 		return a.size - b.size;
 	});

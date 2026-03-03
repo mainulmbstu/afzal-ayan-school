@@ -6,7 +6,7 @@ export const metadata = {
 const Summary = () => {
 	return (
 		<div className=" text-justify">
-			<h2>Academic Summary</h2>
+			<h2 className="uppercase">Academic Summary</h2>
 			<hr />
 			<div className="mb-4">
 				<h4>About Teaching Faculty :</h4>

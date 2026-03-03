@@ -4,8 +4,8 @@ import Link from "next/link";
 import DeleteModal from "@/lib/components/DeleteModal";
 import { getCookieValue } from "@/lib/helpers/getCookieValue";
 import { getTokenData } from "@/lib/helpers/getTokenData";
-import AddOfficerStaffModal from "./AddModal";
-import { deleteAction, getAllAction } from "./action";
+import { createAction, deleteAction, getAllAction } from "./action";
+import CommonAddModal from "@/lib/components/CommonAddModal";
 
 export const metadata = {
 	title: "Officer & Staff",
@@ -20,7 +20,19 @@ const Users = async () => {
 			<h2 className=" uppercase">Officers and staffs</h2>
 			<hr />
 			<div className=" card p-2 mt-5">
-				<AddOfficerStaffModal />
+				<CommonAddModal
+					buttonName={"Add Officer/Staff"}
+					inputs={[
+						"uniqueid",
+						"name",
+						"email",
+						"designation",
+						"department",
+						"joiningdate",
+						"file",
+					]}
+					createAction={createAction}
+				/>
 				<h3>Officers and Staffs: ( {entries?.length})</h3>
 				{/* <h4>Total Sale: {<PriceFormat price={totalPrice} />}</h4> */}
 			</div>

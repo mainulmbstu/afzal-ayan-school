@@ -3,9 +3,10 @@ import Link from "next/link";
 import DeleteModal from "@/lib/components/DeleteModal";
 import { getCookieValue } from "@/lib/helpers/getCookieValue";
 import { getTokenData } from "@/lib/helpers/getTokenData";
-import { deleteAction, getAllAction } from "./action";
+import { createAction, deleteAction, getAllAction } from "./action";
 import Pagination from "@/lib/components/pagination";
 import AddNoticeModal from "./AddModal";
+import CommonAddModal from "@/lib/components/CommonAddModal";
 
 export const metadata = {
 	title: "Notice board",
@@ -21,8 +22,15 @@ const Notice = async ({ searchParams }) => {
 
 	return (
 		<div>
+			<h2 className=" uppercase">notice board</h2>
+			<hr />
 			<div className=" card p-2 mt-5">
-				<AddNoticeModal />
+				<CommonAddModal
+					buttonName={"Add Notice"}
+					inputs={["title", "file"]}
+					createAction={createAction}
+				/>
+
 				<h3>Total notices: ( {data?.total})</h3>
 				{/* <h4>Total Sale: {<PriceFormat price={totalPrice} />}</h4> */}
 			</div>

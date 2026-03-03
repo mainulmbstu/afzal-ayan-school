@@ -8,7 +8,7 @@ export const metadata = {
 const History = async () => {
 	return (
 		<div>
-			<h2>School history</h2>
+			<h2 className="uppercase">School history</h2>
 			<hr />
 			<div>
 				<Image

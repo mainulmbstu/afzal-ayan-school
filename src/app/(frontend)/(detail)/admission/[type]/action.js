@@ -34,6 +34,12 @@ export const createAction = async (formData) => {
 	const type = formData.get("type");
 	const title = formData.get("title");
 	const file = formData.get("file");
+	if (!type) {
+		return {
+			success: false,
+			message: `No type selected, refresh the page`,
+		};
+	}
 	try {
 		let url = "";
 		if (file?.size) {
