@@ -25,7 +25,7 @@ const VerifyEmail = async ({ searchParams }) => {
 			await user.save();
 			message = "email verified successfully";
 			success = true;
-			revalidatePath("/dashboard", "layout");
+			
 		} else {
 			message =
 				"email verification failed, may be due to token validity expired, please register again";
