@@ -28,7 +28,7 @@ const AdminMenu = () => {
 	];
 
 	return (
-		<div className="card p-2 w-full text-2xl">
+		<div className="card p-2 w-full text-xl">
 			<Link
 				className={
 					path === "/dashboard/admin"
@@ -43,9 +43,7 @@ const AdminMenu = () => {
 				{menus.map((item, i) => (
 					<li
 						key={i}
-						className={
-							item.href === path ? "bg-blue-300 text-2xl" : " text-2xl"
-						}
+						className={item.href === path ? "bg-blue-300 text-xl" : " text-xl"}
 					>
 						<Link href={item.href}>
 							{item.icon}

@@ -16,20 +16,23 @@ const UserMenu = () => {
 	];
 
 	return (
-		<div className="card p-2">
+		<div className="card p-2 w-full text-xl">
 			<Link
 				className={
-					path === "/dashboard/admin"
+					path === "/dashboard/user"
 						? "bg-blue-300 p-3"
 						: "hover:bg-zinc-300 p-3"
 				}
-				href={"/dashboard/admin"}
+				href={"/dashboard/user"}
 			>
 				Dashboard
 			</Link>
 			<ul className="menu rounded-box w-full">
 				{menus.map((item, i) => (
-					<li key={i} className={item.href === path ? "bg-blue-300" : ""}>
+					<li
+						key={i}
+						className={item.href === path ? "bg-blue-300 text-xl" : " text-xl"}
+					>
 						<Link href={item.href}>
 							{item.icon}
 							{item.name}
