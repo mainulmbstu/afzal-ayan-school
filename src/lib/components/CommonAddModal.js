@@ -284,7 +284,7 @@ const CommonAddModal = ({
         <input
           onFocus={() => setInputType("date")}
           onBlur={() => setInputType("text")}
-          className="input placeholder:dark:text-red-700"
+          className="input"
           type={inputType}
           id="joiningdate"
           name="joiningdate"
