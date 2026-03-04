@@ -50,8 +50,8 @@ const DeleteModal = ({ value }) => {
 				className="modal justify-end items-start mt-30 md:items-center md:justify-center"
 			>
 				<div className="modal-box max-w-full w-100">
-					<h3 className="font-bold text-lg">Delete confirmation</h3>
-					<p className="p-4">{value?.message}</p>
+					<h3 className="font-bold text-lg ps-8">Delete confirmation</h3>
+					<p className="py-4 ps-8">{value?.message}</p>
 					<div className="modal-action">
 						<form method="dialog">
 							<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
