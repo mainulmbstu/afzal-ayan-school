@@ -346,10 +346,10 @@ const CommonAddModal = ({
         className="modal justify-start items-start md:items-center md:justify-center"
         role="dialog"
       >
-        <div className="modal-box  max-h-fit mt-10 w-screen">
+        <div className="modal-box  max-h-fit mt-10 w-screen py-1">
           <h3 className="text-lg font-bold">{buttonName}</h3>
           <div className=" grid md:grid-cols-1 relative">
-            <div className="p-3 mx-auto hidden md:block">
+            <div className="px-3 mx-auto hidden md:block">
               <Image
                 priority={true}
                 src={
@@ -368,12 +368,12 @@ const CommonAddModal = ({
             <div className="">
               <Form
                 action={clientAction}
-                className="    bg-base-300 shadow-lg shadow-blue-300 card dark:text-white"
+                className=" py-0   bg-base-300 shadow-lg shadow-blue-300 card dark:text-white"
               >
                 {inputs?.map((item, i) => (
                   <div key={i}>{allInput[item]}</div>
                 ))}
-                <div className="mt-3">
+                <div className=" mb-2 md:mt-3">
                   <ProgressBar progress={progress} color={"bg-blue-400"} />
                   <SubmitButton title={"Submit"} design={"btn-accent"} />
                 </div>
