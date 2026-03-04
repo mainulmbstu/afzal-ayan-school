@@ -284,12 +284,12 @@ const CommonAddModal = ({
         <input
           onFocus={() => setInputType("date")}
           onBlur={() => setInputType("text")}
-          className="input"
+          className="input dark:text-red-700"
           type={inputType}
           id="joiningdate"
           name="joiningdate"
           required
-          placeholder="Enter joining date"
+          placeholder="Select joining date"
         />
       </div>
     ),
