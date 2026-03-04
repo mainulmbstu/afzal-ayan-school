@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-import { revalidatePath } from "next/cache";
 import Link from "next/link";
 import React from "react";
 import dbConnect from "@/lib/helpers/dbConnect";
@@ -20,7 +19,7 @@ const VerifyEmail = async ({ searchParams }) => {
 		await dbConnect();
 		const user = await UserModel.findById(tokenData?.id);
 		if (user) {
-<<<<<<< HEAD
+
 			if (new Date() > user?.verifyTokenExpire) {
 				message =
 					"email verification failed, may be due to token validity expired, please register again";
@@ -31,18 +30,9 @@ const VerifyEmail = async ({ searchParams }) => {
 				message = "email verified successfully";
 				success = true;
 			}
-=======
-			user.isVerified = true;
-			if (user.verifyTokenExpire) user.verifyTokenExpire = undefined;
-			await user.save();
-			message = "email verified successfully";
-			success = true;
+
 			
-		} else {
-			message =
-				"email verification failed, may be due to token validity expired, please register again";
->>>>>>> f241f0c4308829c7ef324b0d38e1635a721cb688
-		}
+		} 
 	} catch (error) {
 		console.log(error);
 		message = error?.message?.toString();
