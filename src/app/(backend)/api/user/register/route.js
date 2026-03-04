@@ -1,6 +1,9 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { uploadOnCloudinary } from "@/lib/helpers/cloudinary";
+import {
+	deleteImageOnCloudinary,
+	uploadOnCloudinary,
+} from "@/lib/helpers/cloudinary";
 import dbConnect from "@/lib/helpers/dbConnect";
 import { getErrorMessage } from "@/lib/helpers/getErrorMessage";
 import mailer from "@/lib/helpers/nodeMailer";
@@ -23,11 +26,19 @@ export async function POST(req) {
 	}
 	//for image
 	const file = formData.get("file");
+	let expireHour = 1;
+	// in hour
 	try {
 		await dbConnect();
 		const userExist = await UserModel.findOne({ email });
 		if (userExist) {
-			return Response.json({ message: "User already exist" });
+			if (new Date() > userExist?.verifyTokenExpire) {
+				await UserModel.findOneAndDelete({ email });
+				userExist.picture?.public_id &&
+					(await deleteImageOnCloudinary(userExist.picture?.public_id));
+			} else {
+				return Response.json({ message: "User already exist" });
+			}
 		}
 		const phoneExist = await UserModel.findOne({ phone });
 		if (phoneExist) {
@@ -50,7 +61,7 @@ export async function POST(req) {
 			address,
 			password: hashedPass,
 			role: allUser ? "user" : "admin",
-			verifyTokenExpire: Date.now() + 3600000,
+			verifyTokenExpire: Date.now() + expireHour * 3600000,
 			picture: url && url,
 		});
 		revalidateTag('user-list', 'max')
@@ -59,10 +70,9 @@ export async function POST(req) {
 			email,
 			subject: "Registration verification",
 			body: `<h2>Hi ${name},</h2>
-      <h3>You have been registered successfully. Your ID is ${newUser._id}. </h3>
-      <p>Click <a href="${process.env.BASE_URL}/user/verify-email?verifyToken=${verifyToken}">Here</a> to verify your email or copy and paste the link below to your browser <br> ${process.env.BASE_URL}/user/verify-email?verifyToken=${verifyToken}
-      </p>
-      <p>Link validity: 1 hour</p>
+      <h3>You have been registered successfully in ${process.env.BASE_URL} . Your ID is ${newUser._id}. </h3>
+      <p>Click <a href="${process.env.BASE_URL}/user/verify-email?verifyToken=${verifyToken}">Here</a> to verify your email or copy and paste the link below to your browser <p>Link validity: ${expireHour} hour</p> ${process.env.BASE_URL}/user/verify-email?verifyToken=${verifyToken}</p>
+      
       Thanks for staying with us`,
 		};
 		await mailer(credential);

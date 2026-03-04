@@ -43,19 +43,20 @@ const LoginForm = () => {
 				<h2>Login Form</h2>
 				<Form
 					action={clientAction}
-					className=" p-4 w-full md:w-4/5 lg:w-3/5 card"
+					className=" p-4 w-full md:w-4/5 lg:w-3/5 card dark:text-white"
 				>
 					{/* <Image src='/login.svg' width={100} height={200} alt="" /> */}
 					<div className="mt-3">
 						<label className="block" htmlFor="email">
-							Email
-						</label>
+					Email
+				</label>
 						<input
 							className="input"
 							type="email"
 							id="email"
 							name="email"
 							required
+							placeholder="Enter email"
 						/>
 					</div>
 					<div className="mt-3 relative">

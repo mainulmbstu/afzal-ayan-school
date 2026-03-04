@@ -53,10 +53,10 @@ export async function POST(req) {
 			email,
 			subject: "Profile Update ",
 			body: `<h2>Hi ${userExist?.name},</h2>
-      <h3>Your profile has been Updated successfully.
+      <h3>Your profile  in ${process.env.BASE_URL} has been Updated successfully.</h3>
       Thanks for staying with us`,
 		};
-		mailer(credential);
+		await mailer(credential);
 
 		return Response.json({
 			success: true,

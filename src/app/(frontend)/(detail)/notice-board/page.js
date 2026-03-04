@@ -5,7 +5,6 @@ import { getCookieValue } from "@/lib/helpers/getCookieValue";
 import { getTokenData } from "@/lib/helpers/getTokenData";
 import { createAction, deleteAction, getAllAction } from "./action";
 import Pagination from "@/lib/components/pagination";
-import AddNoticeModal from "./AddModal";
 import CommonAddModal from "@/lib/components/CommonAddModal";
 
 export const metadata = {
@@ -32,12 +31,11 @@ const Notice = async ({ searchParams }) => {
 				/>
 
 				<h3>Total notices: ( {data?.total})</h3>
-				{/* <h4>Total Sale: {<PriceFormat price={totalPrice} />}</h4> */}
 			</div>
 			<div className="">
 				<table className="table">
 					{/* head */}
-					<thead>
+					<thead className=" dark:text-black">
 						<tr>
 							<th scope="col">SL</th>
 							<th scope="col">Date of Publish</th>

@@ -39,7 +39,7 @@ const Users = async () => {
 			<div className="">
 				<table className="table">
 					{/* head */}
-					<thead>
+					<thead className=" dark:text-black">
 						<tr>
 							<th scope="col">SL No.</th>
 							<th scope="col">Unique ID</th>
