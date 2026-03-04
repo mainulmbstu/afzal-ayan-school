@@ -31,23 +31,14 @@ const Profile = () => {
 
 	return (
 		<div className=" grid place-items-center h-full black-theme">
-			<Form action={clientAction} className=" p-4 md:w-3/5  lg:w-4/10 card">
-				<div>
+			<Form
+				action={clientAction}
+				className=" p-4 md:w-3/5  lg:w-4/10 card bg-base-300 dark:text-white"
+			>
+				<div className=" hidden md:block">
 					<Image priority={true} src={profileImage} alt="" />
 				</div>
-				{/* <div className="mt-3">
-          <label className="block" htmlFor="userId">
-          Use ID
-          </label>
-          <input
-            className="input"
-            type="text"
-            id="userId"
-            name="userId"
-            defaultValue={userInfo?._id}
-            disabled
-          />
-        </div> */}
+
 				<div className="mt-3">
 					<label className="block" htmlFor="name">
 						Name

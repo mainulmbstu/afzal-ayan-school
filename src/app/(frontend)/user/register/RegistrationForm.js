@@ -35,16 +35,16 @@ const RegistrationForm = () => {
 
 	return (
 		<div className=" grid md:grid-cols-2 black-theme place-items-center">
-			<div>
+			<div className="hidden md:block">
 				<Image priority={true} src={profileBanner} alt="" />
 			</div>
 			<div className=" h-[89vh] grid place-items-center">
 				<Form
 					action={clientAction}
-					className=" p-4 w-9/10 md:w-4/5 lg:w-9/10 bg-slate-300 shadow-lg shadow-blue-300 card"
+					className=" p-4 w-9/10 md:w-4/5 lg:w-9/10 bg-base-300 shadow-lg shadow-blue-300 card dark:text-white placeholder:dark:text-white "
 				>
-					<h2 className=" text-center">Sign up form</h2>
-					<div className="flex justify-center">
+					<h4 className=" text-center">Sign up form</h4>
+					<div className=" hidden md:flex justify-center">
 						<Image
 							className="h-40 w-auto"
 							width={100}
@@ -64,6 +64,7 @@ const RegistrationForm = () => {
 							id="name"
 							name="name"
 							required
+							placeholder="Enter name"
 						/>
 						{/* <p className=" text-red-500" aria-live="polite">
                 {state?.message}
@@ -79,6 +80,7 @@ const RegistrationForm = () => {
 							id="email"
 							name="email"
 							required
+							placeholder="Enter email"
 						/>
 					</div>
 					<div className="mt-3">
@@ -91,6 +93,7 @@ const RegistrationForm = () => {
 							id="phone"
 							name="phone"
 							required
+							placeholder="Enter mobile number"
 						/>
 					</div>
 					<div className="mt-3">
@@ -103,6 +106,7 @@ const RegistrationForm = () => {
 							id="address"
 							name="address"
 							required
+							placeholder="Enter address"
 						/>
 					</div>
 
@@ -116,6 +120,7 @@ const RegistrationForm = () => {
 							id="password"
 							name="password"
 							required
+							placeholder="Enter password"
 						/>
 						{/* <p className=" text-red-500" aria-live="polite">
                 {state?.message}
@@ -134,7 +139,7 @@ const RegistrationForm = () => {
 					</div>
 					<div className="mt-3">
 						<label className="block" htmlFor="name">
-							Select Profile Image
+							Select Profile Image, 3mb max
 						</label>
 						<input
 							onChange={(e) => {

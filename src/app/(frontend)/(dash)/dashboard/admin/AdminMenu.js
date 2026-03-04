@@ -43,9 +43,13 @@ const AdminMenu = () => {
 				{menus.map((item, i) => (
 					<li
 						key={i}
-						className={item.href === path ? "bg-blue-300 text-xl" : " text-xl"}
+						className={
+							item.href === path
+								? "bg-blue-300 text-xl"
+								: " text-xl hover:bg-blue-200"
+						}
 					>
-						<Link href={item.href}>
+						<Link href={item.href} className="z-20">
 							{item.icon}
 							{item.name}
 						</Link>

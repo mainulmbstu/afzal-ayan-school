@@ -8,6 +8,7 @@ import dbConnect from "@/lib/helpers/dbConnect";
 import { getErrorMessage } from "@/lib/helpers/getErrorMessage";
 import mailer from "@/lib/helpers/nodeMailer";
 import { UserModel } from "@/lib/models/userModel";
+import { updateTag } from "next/cache";
 
 export const Action = async (formData) => {
 	// await new Promise(resolve => {
@@ -20,6 +21,7 @@ export const Action = async (formData) => {
 	if (!email) {
 		return { message: "Please enter all required fields" };
 	}
+	let expireTime=1/6
 	try {
 		await dbConnect();
 		const user = await UserModel.findOne({ email });
@@ -33,17 +35,17 @@ export const Action = async (formData) => {
 				specialChars: false,
 			});
 			user.OTP = genOTP;
-			user.OTPExpire = Date.now() + 3600000;
+			user.OTPExpire = Date.now() + expireTime * 3600000
 			await user.save();
 			const credential = {
 				email,
 				subject: "OTP verification",
 				body: `<h2>Hi ${user?.name},</h2>
-      <h3>Your OTP for password reset is ${genOTP}, validity 1 hour </h3>
+      			<h3>Your OTP ${genOTP} is for password reset in ${process.env.BASE_URL} , validity ${expireTime * 60} minutes </h3>
 
-      Thanks for staying with us`,
+      			Thanks for staying with us`,
 			};
-			mailer(credential);
+			await mailer(credential);
 			return {
 				success: true,
 				message: `An OTP has bees sent to ${email} `,
@@ -55,6 +57,12 @@ export const Action = async (formData) => {
 			}
 			if (!password) {
 				return { message: "Password is required" };
+			}
+			if (new Date() > user?.OTPExpire) {
+				user.OTP = undefined;
+				user.OTPExpire = undefined;
+				await user.save();
+				return { message: "OTP has been expired" };
 			}
 			user.password = await bcrypt.hash(password, 10);
 			user.OTP = undefined;
@@ -70,5 +78,7 @@ export const Action = async (formData) => {
 		// if (error.message === "NEXT_REDIRECT") throw error;
 		console.log(error);
 		return { message: await getErrorMessage(error) };
+	} finally {
+		updateTag('user-list')
 	}
 };

@@ -183,21 +183,22 @@ const CommonAddModal = ({
 				/>
 			</div>
 		),
-		// className: (
-		// 	<div className="mt-3">
-		// 		<label className="hidden md:block" htmlFor="className">
-		// 			Class Name
-		// 		</label>
-		// 		<input
-		// 			className="input"
-		// 			type="text"
-		// 			id="className"
-		// 			name="className"
-		// 			required
-		// 			placeholder="Enter class name"
-		// 		/>
-		// 	</div>
-		// ),
+		news: (
+			<div className="mt-3">
+				<label className="hidden md:block" htmlFor="news">
+					Write news
+				</label>
+				<textarea
+					rows="5"
+					className=" bg-base-300"
+					type="text"
+					id="news"
+					name="news"
+					required
+					placeholder="Enter news"
+				/>
+			</div>
+		),
 		phone: (
 			<div className="mt-3">
 				<label className="hidden md:block" htmlFor="phone">

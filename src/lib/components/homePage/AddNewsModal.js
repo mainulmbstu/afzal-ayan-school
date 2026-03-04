@@ -2,7 +2,6 @@
 import Form from "next/form";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import path from "path";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
@@ -36,7 +35,9 @@ const AddNewsModal = () => {
 			{/* The button to open modal */}
 			<label
 				htmlFor="CreateProductModal"
-				className={userInfo?.role !== "admin" ? "hidden" : "btn btn-primary"}
+				className={
+					userInfo?.role !== "admin" ? "hidden" : "btn btn-primary z-50"
+				}
 			>
 				{loading ? "Submitting" : "Change scrolling news"}
 			</label>

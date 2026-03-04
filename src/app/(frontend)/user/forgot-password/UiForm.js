@@ -29,8 +29,8 @@ const UiForm = () => {
 				router.push("/user/login");
 			}
 		} else {
-			// Swal.fire("Error", data?.message, "error");
-			toast.error(data?.message);
+			Swal.fire("Error", data?.message, "error");
+			// toast.error(data?.message);
 		}
 	};
 
@@ -44,7 +44,7 @@ const UiForm = () => {
 				<h2>Reset Password Form</h2>
 				<Form
 					action={clientAction}
-					className=" p-4 w-full md:w-4/5 lg:w-3/5 card"
+					className=" p-4 w-full md:w-4/5 lg:w-3/5 card bg-base-300 dark:text-white placeholder:text-white"
 				>
 					{/* <Image src='/login.svg' width={100} height={200} alt="" /> */}
 					<div className="mt-3">
@@ -58,6 +58,7 @@ const UiForm = () => {
 							id="email"
 							name="email"
 							required
+							placeholder="Enter email"
 						/>
 					</div>
 					<div className={OTP ? "" : "hidden"}>
@@ -70,6 +71,7 @@ const UiForm = () => {
 								type={"text"}
 								id="inputOtp"
 								name="inputOtp"
+								placeholder="Enter OTP"
 							/>
 							{/* <p className=" text-red-500" aria-live="polite">
                   {state?.message}
@@ -84,6 +86,9 @@ const UiForm = () => {
 								type={showpass ? "text" : "password"}
 								id="password"
 								name="password"
+								placeholder="Enter password"
+								
+
 							/>
 							{/* <p className=" text-red-500" aria-live="polite">
                   {state?.message}
