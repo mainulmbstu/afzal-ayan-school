@@ -37,7 +37,7 @@ const Gallery = async ({ searchParams }) => {
 					api={"/api/admin/create-gallery"}
 				/>
 			</div>
-			<h2 className=" uppercase">gallery</h2>
+			<h2 className=" uppercase">photos</h2>
 			<hr />
 			<div>
 				<Carousel2 slides={slides} autoPlay={true} interval={2000} />

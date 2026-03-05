@@ -39,5 +39,6 @@ export const navMenuHelper = async () => {
 			"hostel",
 		],
 		curricular: ["debate", "science fair", "sports"],
+		gallery: ["photo-list", "video-list"],
 	};
 };

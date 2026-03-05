@@ -104,6 +104,7 @@ const CommonAddModal = ({
         />
       </div>
     ),
+
     uniqueid: (
       <div className="mt-3">
         <label className="hidden md:block" htmlFor="uniqueid">
@@ -116,6 +117,21 @@ const CommonAddModal = ({
           name="uniqueid"
           required
           placeholder="Enter unique id"
+        />
+      </div>
+    ),
+    youtube: (
+      <div className="mt-3">
+        <label className="hidden md:block" htmlFor="youtube">
+          Youtube video ID
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="youtube"
+          name="youtube"
+          required
+          placeholder="Enter youtube video id"
         />
       </div>
     ),

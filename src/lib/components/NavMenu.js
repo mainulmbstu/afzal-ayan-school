@@ -25,6 +25,7 @@ const NavMenu = () => {
 	const [drop6, setdrop6] = useState(false);
 	const [drop7, setdrop7] = useState(false);
 	const [drop8, setdrop8] = useState(false);
+	const [drop9, setdrop9] = useState(false);
 	const [mounted, setMounted] = useState(false);
 	const { userInfo, setUserInfo, setToken } = useAuth();
 
@@ -62,9 +63,8 @@ const NavMenu = () => {
 				</div>
 				<div className=" grid content-between  h-full">
 					<div
-						className={`transition-all  duration-500 ${
-							isMenuOpen ? " flex-1 bg-base-300 dark:bg-black" : ""
-						}`}
+						className={`transition-all  duration-500 ${isMenuOpen ? " flex-1 bg-base-300 dark:bg-black" : ""
+							}`}
 					>
 						<nav
 							className={
@@ -74,11 +74,10 @@ const NavMenu = () => {
 							}
 						>
 							<ul
-								className={`${
-									isMenuOpen
-										? "flex flex-col scale-y-100 pt-12 text-center bg-blue-400 transition-all  duration-500"
-										: "scale-y-0"
-								} md:flex justify-between md:gap-6 md:scale-y-100`}
+								className={`${isMenuOpen
+									? "flex flex-col scale-y-100 pt-12 text-center bg-blue-400 transition-all  duration-500"
+									: "scale-y-0"
+									} md:flex justify-between md:gap-6 md:scale-y-100`}
 							>
 								<li className=" border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all">
 									<Link
@@ -102,9 +101,8 @@ const NavMenu = () => {
 										/>{" "}
 									</span>
 									<ul
-										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${
-											drop1 ? "scale-y-100" : "scale-y-0"
-										}`}
+										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${drop1 ? "scale-y-100" : "scale-y-0"
+											}`}
 									>
 										{menuHelper?.about?.map((item, i) => (
 											<li key={i}>
@@ -131,9 +129,8 @@ const NavMenu = () => {
 										/>{" "}
 									</span>
 									<ul
-										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${
-											drop3 ? "scale-y-100" : "scale-y-0"
-										}`}
+										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${drop3 ? "scale-y-100" : "scale-y-0"
+											}`}
 									>
 										{menuHelper?.admin?.map((item, i) => (
 											<li key={i}>
@@ -148,20 +145,35 @@ const NavMenu = () => {
 										))}
 									</ul>
 								</li>
-
-								<li className=" border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all">
-									<Link
-										className={
-											path === "/gallery"
-												? "bg-zinc-300 underline text-blue-700"
-												: ""
-										}
-										onClick={menuClose}
-										href={"/gallery"}
+								<li
+									onClick={() => setdrop9(!drop9)}
+									className={`relative cursor-pointer  border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all ${path.startsWith("/gallery") ? "bg-zinc-300 text-blue-700 underline" : ""}`}
+								>
+									<span className=" flex justify-center gap-2">
+										gallery
+										<IoIosArrowDown
+											className={`mt-1 ${drop9 ? "rotate-180" : ""}`}
+										/>{" "}
+									</span>
+									<ul
+										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${drop9 ? "scale-y-100" : "scale-y-0"
+											}`}
 									>
-										Gallery
-									</Link>
+										{menuHelper?.gallery?.map((item, i) => (
+											<li key={i}>
+												<Link
+													onClick={menuClose}
+													className={` uppercase w-full inline-block p-2 hover:bg-blue-400 ${path.startsWith(`/gallery/${slugify(item)}`) ? "bg-blue-400 underline" : ""}`}
+													href={`/gallery/${slugify(item)}`}
+												>
+													{item}
+												</Link>
+											</li>
+										))}
+									</ul>
 								</li>
+
+
 								<li className=" border-b border-b-zinc-50 hover:inset-shadow-sm  py-2 md:py-0 hover:inset-shadow-indigo-300 transition-all">
 									<Link
 										className={
@@ -216,9 +228,8 @@ const NavMenu = () => {
 											/>{" "}
 										</span>
 										<ul
-											className={`absolute top-full z-20  md:right-0 bg-base-300 w-full md:w-fit whitespace-nowrap origin-top duration-300 ${
-												drop2 ? "scale-y-100" : "scale-y-0"
-											}`}
+											className={`absolute top-full z-20  md:right-0 bg-base-300 w-full md:w-fit whitespace-nowrap origin-top duration-300 ${drop2 ? "scale-y-100" : "scale-y-0"
+												}`}
 										>
 											<li>
 												<Link
@@ -235,8 +246,8 @@ const NavMenu = () => {
 													}
 												>
 													{userInfo?.role === "admin"
-															? "dashboard"
-															: "edit profile"}
+														? "dashboard"
+														: "edit profile"}
 												</Link>
 											</li>
 											<li>
@@ -276,9 +287,8 @@ const NavMenu = () => {
 						</nav>
 					</div>
 					<div
-						className={` transition-all  duration-500 ${
-							isMenuOpen ? " flex-1 bg-base-300" : ""
-						}`}
+						className={` transition-all  duration-500 ${isMenuOpen ? " flex-1 bg-base-300" : ""
+							}`}
 					>
 						<nav
 							className={
@@ -288,11 +298,10 @@ const NavMenu = () => {
 							}
 						>
 							<ul
-								className={`${
-									isMenuOpen
-										? "flex flex-col scale-y-100 pt-12 text-center  bg-blue-400 transition-all  duration-500"
-										: "scale-y-0"
-								} md:flex justify-between md:bg-blue-300 md:p-2 md:gap-6 md:scale-y-100`}
+								className={`${isMenuOpen
+									? "flex flex-col scale-y-100 pt-12 text-center  bg-blue-400 transition-all  duration-500"
+									: "scale-y-0"
+									} md:flex justify-between md:bg-blue-300 md:p-2 md:gap-6 md:scale-y-100`}
 							>
 								<li
 									onClick={() => setdrop4(!drop4)}
@@ -305,9 +314,8 @@ const NavMenu = () => {
 										/>{" "}
 									</span>
 									<ul
-										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${
-											drop4 ? "scale-y-100" : "scale-y-0"
-										}`}
+										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${drop4 ? "scale-y-100" : "scale-y-0"
+											}`}
 									>
 										{menuHelper?.academic?.map((item, i) => (
 											<li key={i}>
@@ -334,9 +342,8 @@ const NavMenu = () => {
 										/>{" "}
 									</span>
 									<ul
-										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${
-											drop5 ? "scale-y-100" : "scale-y-0"
-										}`}
+										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${drop5 ? "scale-y-100" : "scale-y-0"
+											}`}
 									>
 										{menuHelper?.admission?.map((item, i) => (
 											<li key={i}>
@@ -362,9 +369,8 @@ const NavMenu = () => {
 										/>{" "}
 									</span>
 									<ul
-										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${
-											drop6 ? "scale-y-100" : "scale-y-0"
-										}`}
+										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${drop6 ? "scale-y-100" : "scale-y-0"
+											}`}
 									>
 										{menuHelper?.result?.map((item, i) => (
 											<li key={i}>
@@ -390,9 +396,8 @@ const NavMenu = () => {
 										/>{" "}
 									</span>
 									<ul
-										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${
-											drop7 ? "scale-y-100" : "scale-y-0"
-										}`}
+										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${drop7 ? "scale-y-100" : "scale-y-0"
+											}`}
 									>
 										{menuHelper?.facilities?.map((item, i) => (
 											<li key={i}>
@@ -418,9 +423,8 @@ const NavMenu = () => {
 										/>{" "}
 									</span>
 									<ul
-										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${
-											drop8 ? "scale-y-100" : "scale-y-0"
-										}`}
+										className={`absolute top-full z-20  md:left-0  w-full md:w-fit whitespace-nowrap origin-top duration-300 bg-blue-300 ${drop8 ? "scale-y-100" : "scale-y-0"
+											}`}
 									>
 										{menuHelper?.curricular?.map((item, i) => (
 											<li key={i}>
