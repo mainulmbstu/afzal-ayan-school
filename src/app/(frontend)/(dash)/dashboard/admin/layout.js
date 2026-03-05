@@ -10,7 +10,7 @@ export const metadata = {
 };
 export default function AdminLayout({ children }) {
   return (
-    <div className=" grid md:grid-cols-12 gap-2 px-2 min-h-250 ">
+    <div className=" grid md:grid-cols-12 gap-2 px-2 mb-2 ">
       <div className="col-span-12 md:col-span-3 ">
         <AdminMenu />
       </div>

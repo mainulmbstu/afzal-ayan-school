@@ -234,7 +234,9 @@ const NavMenu = () => {
 															: "/dashboard/user"
 													}
 												>
-													Dashboard
+													{userInfo?.role === "admin"
+															? "dashboard"
+															: "edit profile"}
 												</Link>
 											</li>
 											<li>
@@ -247,7 +249,7 @@ const NavMenu = () => {
 														router.refresh("/");
 													}}
 													className={
-														"w-full inline-block md:text-left p-2 hover:bg-zinc-300 cursor-pointer"
+														"w-full inline-block md:text-left p-2 hover:bg-zinc-300 cursor-pointer uppercase"
 													}
 												>
 													Logout

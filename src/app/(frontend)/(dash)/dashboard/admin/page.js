@@ -6,7 +6,8 @@ export const metadata = {
 };
 const AdminDashboard = () => {
 	return (
-		<div className=" h-[93vh]">
+		<div className="">
+			
 			<Profile />
 		</div>
 	);

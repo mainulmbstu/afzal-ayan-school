@@ -31,6 +31,7 @@ const Profile = () => {
 
   return (
     <div className=" grid place-items-center black-theme">
+      <h3>Edit your Profile </h3>
       <Form
         action={clientAction}
         className=" p-4 md:w-3/5  lg:w-4/10 card bg-base-300 dark:text-white"

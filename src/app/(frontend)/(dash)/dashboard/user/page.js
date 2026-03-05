@@ -6,7 +6,7 @@ export const metadata = {
 };
 const UserDashboard = () => {
 	return (
-		<div className=" h-[93vh]">
+		<div className="">
 			<Profile />
 		</div>
 	);

@@ -11,7 +11,7 @@ const AdminMenu = () => {
 	const menus = [
 		{
 			name: "profile",
-			href: "/dashboard/admin/profile",
+			href: "/dashboard/admin",
 			icon: <ImProfile />,
 		},
 		{
@@ -29,7 +29,7 @@ const AdminMenu = () => {
 
 	return (
 		<div className="card p-2 w-full text-xl">
-			<Link
+			{/* <Link
 				className={
 					path === "/dashboard/admin"
 						? "bg-blue-300 p-3"
@@ -38,7 +38,7 @@ const AdminMenu = () => {
 				href={"/dashboard/admin"}
 			>
 				Dashboard
-			</Link>
+			</Link> */}
 			<ul className="menu rounded-box w-full">
 				{menus.map((item, i) => (
 					<li

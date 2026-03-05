@@ -38,8 +38,8 @@ const ContactPage = () => {
 							<p>Charpara Bazar</p>
 							<p>Delduar, Tangail</p>
 							<p>Mobile: +8801778471190</p>
-							<p>email:</p>
-							<p>Website:</p>
+							<p>email: afzal.hosen57@yahoo.com</p>
+							<p>Website: https://afzal-ayanmodelhighschool.vercel.app</p>
 						</div>
 					</div>
 					<hr />

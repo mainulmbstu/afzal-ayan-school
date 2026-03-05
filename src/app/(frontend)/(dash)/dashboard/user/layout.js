@@ -3,7 +3,7 @@ import UserMenu from "./UserMenu";
 export const metadata = {
 	title: {
 		default: "User dashboard",
-		template: "%s | User dashboard | Blog",
+		template: "%s | AFZAL-AYAN MODEL HIGH SHOOL",
 		// absolute:""
 	},
 	description: "A blog website",
