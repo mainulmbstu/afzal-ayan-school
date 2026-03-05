@@ -28,7 +28,7 @@ const Sidebar = async () => {
 								<p> {`${item?.speech.substring(0, 150)}.....`} </p>
 							</div>
 						</div>
-						<div className="md:text-right py-3 underline ">
+						<div className="md:text-right py-3 ">
 							<Link
 								href={`/admin/${item.link}`}
 								className="text-blue-600 hover:underline py-3"
