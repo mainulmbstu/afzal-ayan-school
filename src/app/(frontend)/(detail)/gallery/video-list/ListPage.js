@@ -42,7 +42,7 @@ const ListPage = ({ value }) => {
           }}
         />
       </div>
-      <div className=" grid md:grid-cols-3 gap-4 ">
+      <div className=" grid md:grid-cols-4 gap-4 ">
         {videos?.length ? (
           videos?.map((item) => (
             <div
