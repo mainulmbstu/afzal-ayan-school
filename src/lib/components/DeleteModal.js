@@ -33,12 +33,12 @@ const DeleteModal = ({ value }) => {
     }
   };
   return (
-    <div className={userInfo?.role !== "admin" ? "hidden" : ""}>
+    <div className={userInfo?.role !== "admin" ? "hidden" : " relative z-30"}>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
       {/** biome-ignore lint/a11y/useButtonType: <explanation> */}
       <button
         disabled={loading}
-        className="btn btn-link text-red-600 inline-block z-40 "
+        className="btn btn-link text-red-600 inline-block "
         onClick={() => ref.current.showModal()}
         // onClick={() => document.getElementById("my_modal_1").showModal()}
       >

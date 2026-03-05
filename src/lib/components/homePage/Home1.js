@@ -16,7 +16,11 @@ const Home1 = async () => {
     <div className="p-2">
       {/** biome-ignore lint/a11y/useButtonType: <explanation> */}
       <button
-        className={userInfo?.role !== "admin" ? "hidden" : "btn btn-primary "}
+        className={
+          userInfo?.role !== "admin"
+            ? "hidden"
+            : "btn btn-primary relative z-30 "
+        }
         onClick={refreshAll}
       >
         Refresh your total web
