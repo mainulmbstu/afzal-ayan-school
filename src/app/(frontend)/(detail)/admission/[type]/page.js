@@ -57,9 +57,9 @@ const MainPage = async ({ params }) => {
 						className=" h-screen "
 					>
 						<p>
-							Your browser does not support PDFs.
+							Your browser does not support PDFs. <br />
 							<br />
-							<br /> <a href={single?.file?.secure_url}>Download the PDF</a>.
+							<a className=" underline text-blue-50" href={single?.file?.secure_url}>Download</a>  the PDF
 						</p>
 					</object>
 				) : (
