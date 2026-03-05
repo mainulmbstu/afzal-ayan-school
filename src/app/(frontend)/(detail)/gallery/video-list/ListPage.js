@@ -42,21 +42,19 @@ const ListPage = ({ value }) => {
           }}
         />
       </div>
-      <div className=" grid md:grid-cols-1 lg:grid-cols-1 gap-4 ">
+      <div className=" grid md:grid-cols-3 gap-4 ">
         {images?.length ? (
           images?.map((item) => (
             <div
               key={item?._id}
               className="border  flex items-center relative z-30"
             >
-              <div>
-                {/* Use the YouTubeEmbed component and pass the video ID */}
-                <YouTubeEmbed
-                  videoid={item?.youtubeLink}
-                  height={300}
-                  width={500}
-                />
-              </div>
+              {/* Use the YouTubeEmbed component and pass the video ID */}
+              <YouTubeEmbed
+                videoid={item?.youtubeLink}
+                //   height={300}
+                width={500}
+              />
               <div
                 className={
                   userInfo?.role !== "admin"

@@ -345,7 +345,7 @@ const CommonAddModal = ({
   };
 
   return (
-    <div className=" relative z-30">
+    <div className=" relative z-40">
       {/* The button to open modal */}
       <label
         htmlFor="CreateProductModal"
