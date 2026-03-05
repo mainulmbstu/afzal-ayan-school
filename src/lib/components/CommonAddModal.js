@@ -401,14 +401,14 @@ const CommonAddModal = ({
               </label>
             </div>
           </div>
-          <div className="modal-action md:hidden">
+          {/* <div className="modal-action md:hidden">
             <label
               htmlFor="CreateProductModal"
               className="btn btn-error absolute right-0 top-0 rounded-full"
             >
               X
             </label>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
