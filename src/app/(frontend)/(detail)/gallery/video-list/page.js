@@ -7,7 +7,7 @@ export const metadata = {
   description: "Gallery page",
 };
 
-const Gallery = async ({ searchParams }) => {
+const VideoPage = async ({ searchParams }) => {
   let spms = await searchParams;
   let page = Number((await spms.page) ?? 1);
   let perPage = Number((await spms.perPage) ?? 12);
@@ -29,10 +29,10 @@ const Gallery = async ({ searchParams }) => {
       <hr />
 
       <div>
-        <ListPage value={{ entries, data, page, perPage}} />
+        <ListPage value={{ entries, data, page, perPage }} />
       </div>
     </div>
   );
 };
 
-export default Gallery;
+export default VideoPage;

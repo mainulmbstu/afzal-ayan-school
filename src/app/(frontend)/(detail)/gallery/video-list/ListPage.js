@@ -9,20 +9,20 @@ import { YouTubeEmbed } from "@next/third-parties/google";
 
 const ListPage = ({ value }) => {
   let { entries, data, page, perPage } = value;
-  let [images, setImages] = useState([]);
+  let [videos, setVideos] = useState([]);
   let [selected, setSelected] = useState([]);
   let { userInfo } = useAuth();
 
   useEffect(() => {
-    setImages(entries);
+    setVideos(entries);
   }, [entries]);
   let selectHandle = (e) => {
     let { name, checked } = e.target;
 
-    let tempArr = images?.map((item) =>
+    let tempArr = videos?.map((item) =>
       item?._id === name ? { ...item, isChecked: checked } : item,
     );
-    setImages(tempArr);
+    setVideos(tempArr);
     let selectIdArr =
       tempArr?.length &&
       tempArr?.filter((item) => item?.isChecked).map((item) => item?._id);
@@ -43,17 +43,17 @@ const ListPage = ({ value }) => {
         />
       </div>
       <div className=" grid md:grid-cols-3 gap-4 ">
-        {images?.length ? (
-          images?.map((item) => (
+        {videos?.length ? (
+          videos?.map((item) => (
             <div
               key={item?._id}
-              className="border  flex items-center relative z-30"
+              className="border  flex justify-center relative z-30"
             >
               {/* Use the YouTubeEmbed component and pass the video ID */}
               <YouTubeEmbed
                 videoid={item?.youtubeLink}
                 //   height={300}
-                width={500}
+                width={340}
               />
               <div
                 className={
