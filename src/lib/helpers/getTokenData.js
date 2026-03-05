@@ -1,15 +1,13 @@
 "use server";
+import jwt from "jsonwebtoken";
 
-import { jwtVerify } from "jose";
-
-const secretKey = new TextEncoder().encode(process.env.JWT_KEY);
 export const getTokenData = async (token) => {
 	try {
 		if (!token) {
 			return null;
 		}
-		const { payload } = await jwtVerify(token, secretKey);
-		return payload?.userInfo;
+		var decoded = jwt.verify(token, process.env.JWT_KEY)
+		return decoded?.userInfo;
 	} catch (error) {
 		console.log("getTokenData error", error.message);
 		return null;
