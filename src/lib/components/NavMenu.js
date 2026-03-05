@@ -69,7 +69,7 @@ const NavMenu = () => {
 						<nav
 							className={
 								isMenuOpen
-									? "relative  uppercase z-30"
+									? "relative  uppercase z-40"
 									: "relative  uppercase z-20"
 							}
 						>
