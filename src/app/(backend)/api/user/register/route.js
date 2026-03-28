@@ -21,14 +21,14 @@ export async function POST(req) {
 	const phone = formData.get("phone");
 	const address = formData.get("address");
 	const password = formData.get("password");
-	if (!name || !email || !password || !phone) {
-		return Response.json({ message: "Please enter all required fields" });
-	}
 	//for image
 	const file = formData.get("file");
 	let expireHour = 1;
 	// in hour
 	try {
+		if (!name || !email || !password || !phone) {
+			throw new Error("Please enter all required fields");
+		}
 		await dbConnect();
 		const userExist = await UserModel.findOne({ email });
 		if (userExist) {
@@ -37,12 +37,12 @@ export async function POST(req) {
 				userExist.picture?.public_id &&
 					(await deleteImageOnCloudinary(userExist.picture?.public_id));
 			} else {
-				return Response.json({ message: "User already exist" });
+				throw new Error("User already exist");
 			}
 		}
 		const phoneExist = await UserModel.findOne({ phone });
 		if (phoneExist) {
-			return Response.json({ message: "phone number already exist" });
+			throw new Error("phone number already exist");
 		}
 		let url = "";
 		if (file?.size) {

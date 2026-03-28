@@ -9,6 +9,7 @@ export async function POST(req) {
 	let formData = await req.formData();
 
 	const getFiles = formData.getAll("file");
+	console.log(getFiles[0]);
 	if (!getFiles[0]?.size) {
 		return Response.json({
 			success: false,
