@@ -94,7 +94,7 @@ const Footer = () => {
         <h4>Address</h4>
         <p>Charpara Bazar</p>
         <p>Delduar, Tangail</p>
-        <Link className=" text-blue-500 underline" href={'tel:+8801778471190'}>Mobile: +8801778471190</Link>
+        <Link className=" text-blue-500 underline" href={'tel:+8801778471190'}>Call: +8801778471190</Link>
         <p>email: afzal.hosen57@yahoo.com</p>
         <p>Website: https://afzal-ayanmodelhighschool.vercel.app</p>
       </div>
